@@ -13,15 +13,24 @@ btnCalcular.addEventListener('click', ()=>{
     event.preventDefault();
 
     var inss = 0.05 * campoSalario.value;
-    var ir;
+    var ir = 0;
+    var percentIr = '0%';
     
-    if(campoSalario.value > 3500){
-        ir = campoSalario.value * 0.18;
-        irPercent.innerHTML = `<span>18%</span>`;
-    }else{
-        ir = campoSalario.value * 0.08;
-        irPercent.innerHTML = `<span>8%</span>`;
+    if(campoSalario.value > 4664.68){
+        ir = 0.275;
+        percentIr = '27,5%';
+    }else if(campoSalario.value > 3751.06 && campoSalario.value <= 4664.68){
+        ir = 0.225;
+        percentIr = '22,5%'
+    }else if(campoSalario.value > 2826.65 && campoSalario.value <= 3751.06){
+        ir = 0.15;
+        percentIr = '15%'
+    }else if(campoSalario.value > 1903.98 && campoSalario.value <= 2826.65){
+        ir = 0.075;
+        percentIr = '7,5%'
     }
+
+    irPercent.innerHTML = `<span>${percentIr}</span>`;
 
     var desconto = inss + ir;
     var salarioLiquido = campoSalario.value - desconto;
