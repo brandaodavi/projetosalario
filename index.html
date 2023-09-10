@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100;300;500;700&display=swap"rel="stylesheet">
+    <link rel="shortcut icon" href="img/dollar.png" type="img/x-icon">
+    <title>Salário</title>
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="form-container">
+            <div class="view-container">
+                <div class="img-container">
+
+                </div>
+                <div class="input-container">
+                    <form>
+                        <div class="nome-content">
+                            <label class="label-name">Funcionário</label>
+                            <input type="text" id="nome" placeholder="Digite o Nome" required>
+                            <span class="alerta1">Este campo não pode estar vazio</span>
+                        </div>
+                        <div class="salario-content">
+                            <label class="label-salario">Salário Bruto</label>
+                            <input type="number" id="salario"
+                                placeholder="Digite o Salário" required>
+                            <span class="alerta2">Este campo não pode estar vazio</span>
+                        </div>
+                        <div class="button-container">
+                            <button id="calcular" type="submit" onclick="abrirModal()">CALCULAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container">
+            <div class="modal">
+                <div class="semicircle"><h1>R$</h1></div>
+                <div class="info-container">
+                    <div class="btn-close">
+                        <button id="fechar" onclick="fecharModal()">X</button>
+                    </div>
+                    <div class="salario-box">
+                        <span class="descricao descricao2">O valor do salário líquido é: </span>
+                        <span id="salarioStatus"></span>
+                    </div>
+                    <div class="descontos-box">
+                        <span class="descricao">Descontos</span>
+                    </div>
+                    <div class="impostos-box">
+                        <div class="inss">
+                            <h4>INSS - 5%</h4>
+                            <span id="valor-inss"></span>
+                        </div>
+                        <div class="ir">
+                            <h4>IR - <span id="ir-percent"></span></h4>
+                            <span id="valor-ir"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/calcular.js"></script>
+</html>

@@ -1,0 +1,290 @@
+:root{
+    --dark-bg :rgb(47, 47, 49);
+    --dark-font :rgb(250, 250, 250);
+    --light-bg: white;
+    --light-font: rgb(47, 47, 49);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins';
+}
+
+.body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--dark-bg);
+}
+
+.dia{
+    background: white !important;
+    color: black !important; 
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .form-container, .container .modal-container{
+    width: 800px;
+    height: 550px;
+    margin: 50px;
+}
+
+.modal-container{
+    display: none;
+}
+
+.modal-container.active{
+    display: flex;
+}
+
+.body.dia .alerta1, .alerta2{
+    font-weight: bold;
+}
+
+.container .form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .form-container .view-container{
+    padding: 0 0 30px 0;
+    gap: 5px;
+    color: var(--dark-font);
+}
+
+.container .form-container .view-container,
+.container .modal-container .modal{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form-container .view-container .img-container{
+    width: 300px;
+    height: 300px;
+    background: url('/img/user.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 999;
+}
+
+.container .form-container .view-container .input-container{
+    margin-left: -100px;
+}
+
+.input-container form{
+    padding: 55px 0 0 0;
+    width: 300px;
+    height: 350px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.input-container form .nome-content, form .salario-content{
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.input-container form .nome-content label, 
+.input-container form .salario-content label{
+    margin-left: 20px;
+}
+
+.input-container form .nome-content input, 
+.input-container form .salario-content input{
+    min-height: 50px;
+    max-height:50px;
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid .2px;
+    outline: none;
+    background: linear-gradient(rgb(212, 202, 202), rgb(192, 182, 182));
+}
+
+.input-container form .salario-content input, .nome-content input{
+    padding: 0 0 0 35px;
+}
+
+.input-container form .salario-content input:focus,
+.input-container form .nome-content input:focus{
+    box-shadow: 2px 2px 10px;
+    transition: .2s linear;
+}
+
+.input-container form .nome-content .alerta1,
+.input-container form .salario-content .alerta2{
+    display: none;
+    color: red;
+    margin-left: 50px;
+    font-size: 12px;
+}
+
+.input-container form .nome-content .alerta1.active,
+.input-container form .salario-content .alerta2.active{
+    display: flex;
+}
+
+.container .form-container .view-container .input-container form .button-container{
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button-container #calcular{
+    width: 250px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: rgb(33, 178, 33);
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+#calcular:hover{
+    background: green;
+    transition: .2s linear;
+    cursor: pointer;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button{
+    display: none;
+}
+
+.modal-container .modal{
+    flex-direction: column;
+}
+
+.modal-container .modal .semicircle{
+    margin-bottom: -55px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--dark-bg);
+    box-shadow: 1px 3px 2px 5px white;
+    text-align: center;
+    font-size: 15px;
+    color: greenyellow;
+}
+
+.semicircle.dia{
+    box-shadow: 1px 3px 2px 5px black !important;
+    color: green !important;
+}
+
+.modal-container .modal .info-container{
+    width: 700px;
+    height: 400px;
+    background: var(--dark-bg);
+    box-shadow: 1px 1px 2px 2px white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.info-container.dia{
+    box-shadow: 1px 1px 2px 2px black !important;
+}
+
+.info-container .btn-close{
+    width: 700px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-close #fechar{
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    background: rgb(218, 22, 22);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.btn-close #fechar:hover{
+    cursor: pointer;
+    font-weight: 600;
+    background: red;
+    transition: .2s linear;
+}
+
+.info-container .salario-box{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-font);
+}
+
+.info-container .salario-box.dia{
+    color: black !important;
+}
+
+.salario-box .descricao{
+    font-size: 25px;
+} 
+
+.salario-box #salarioStatus{
+    font-size: 80px;
+    color: rgb(160, 237, 83);
+} 
+
+.info-container .descontos-box{
+    margin-top: -5px;
+    color: var(--dark-font);
+    font-size: 20px;
+    font-weight: 600;
+    width: 500px;
+    text-align: center;
+}
+
+.info-container .impostos-box{
+    margin-top: -5px;
+    width: 500px;
+    height: 130px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.impostos-box .inss, .ir{
+    background: rgb(160, 237, 83) !important;
+    width: 180px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    color: var(--dark-font);
+    font-weight: 600;
+}
+
+#valor-ir, #valor-inss{
+    color: red;
+}
