@@ -9,7 +9,7 @@ const alerta1 = document.querySelector('.alerta1');
 const alerta2 = document.querySelector('.alerta2');
 const descricao = document.querySelector('.descricao2');
 
-btnCalcular.addEventListener('click', ()=>{
+btnCalcular.addEventListener('click', (event)=>{
     event.preventDefault();
 
     var inss = 0.05 * campoSalario.value;
